@@ -13,7 +13,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var settingsLabel: UILabel!
     var totalPerPerson = "0.0"
-    var splitBetween = "2"
+    var splitBetween = 2
     var tip = 10.0
     var tipAsInt: Int = 0
     
