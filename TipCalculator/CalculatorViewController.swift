@@ -10,36 +10,23 @@ import UIKit
 class CalculatorViewController: UIViewController {
     
     @IBOutlet var billTextField: UITextField!
-    @IBOutlet var zeroPctButton: UIButton!
-    @IBOutlet var tenPctButton: UIButton!
-    @IBOutlet var twentyPctButton: UIButton!
+    @IBOutlet weak var enterTipAmount: UITextField!
     @IBOutlet var splitNumberLabel: UILabel!
     var tip: Double = 0.0
     var result = "0.0"
     var numberOfPeople = 2
     
-    
-    @IBAction func tipChanged(_ sender: UIButton) {
-        percentNotSelected()
-        sender.isSelected = true
-        
-        //displays tip option as a %
-        let tipTitle = sender.currentTitle!
-        //.dropLast removes the % and String is used to create a new string from the result of tip.dropLast()
-        //This is necessary because the dropLast() method returns a substring
-        let removePercent = String(tipTitle.dropLast())
-        // Convert the removePercent string into a Double? and then forcefully unwraps it. tipInt is of type Double?
-        let tipInt = Double(removePercent)!
-        //Divide tipInt by 100 to get a decimal
-        tip = tipInt / 100
-        //        print(decimalTip)
-        billTextField.endEditing(true)
+    @IBAction func tipChanged(_ sender: UITextField) {
+        tipAmountEntered()
     }
     
-    func percentNotSelected() {
-        zeroPctButton.isSelected = false
-        tenPctButton.isSelected = false
-        twentyPctButton.isSelected = false
+    func tipAmountEntered() {
+        if let tipText = enterTipAmount.text {
+            print(tipText)
+            var convertTip = Double(tipText) ?? 0.0
+            tip = convertTip / 100.00
+            print(tip)
+        }
     }
     
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
@@ -55,22 +42,30 @@ class CalculatorViewController: UIViewController {
             self.splitNumberLabel.text = "2"
             self.numberOfPeople = 2
             self.billTextField.text = ""
-            self.percentNotSelected()
+            self.enterTipAmount.text = ""
         })
     }
     
     @IBAction func calculatePressed(_ sender: UIButton) {
         calculate()
+        tipAmountEntered()
         self.performSegue(withIdentifier: "goToResults", sender: self)
         resetField()
     }
     
     func calculate() {
+        tipAmountEntered()
         if let billAmount = Double(billTextField.text ?? "0.0") {
+//            print(billAmount)
             let tipAmount = billAmount * tip
+//            print(tipAmount)
             let checkTotal = tipAmount + (Double(billTextField.text!) ?? 0.0)
+//            print(checkTotal)
             let calculateSplit = checkTotal / Double(numberOfPeople)
+//            print(calculateSplit)
             result = String(format: "%.2f", calculateSplit)
+//            print(result)
+//            print(enterTipAmount.text!)
         }
     }
     
@@ -80,6 +75,7 @@ class CalculatorViewController: UIViewController {
             destinationVC.totalPerPerson = result
             destinationVC.splitBetween = numberOfPeople
             destinationVC.tip = tip * 100
+            destinationVC.tipAsString = enterTipAmount.text!
         }
     }
 }
