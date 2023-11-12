@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC6030CC2AFC76330021739A /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6030CB2AFC76330021739A /* ResultsViewController.swift */; };
 		ECF50E572AFC475A00779EA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF50E562AFC475A00779EA2 /* AppDelegate.swift */; };
 		ECF50E592AFC475A00779EA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF50E582AFC475A00779EA2 /* SceneDelegate.swift */; };
-		ECF50E5B2AFC475A00779EA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF50E5A2AFC475A00779EA2 /* ViewController.swift */; };
+		ECF50E5B2AFC475A00779EA2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF50E5A2AFC475A00779EA2 /* CalculatorViewController.swift */; };
 		ECF50E5E2AFC475A00779EA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF50E5C2AFC475A00779EA2 /* Main.storyboard */; };
 		ECF50E602AFC475C00779EA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECF50E5F2AFC475C00779EA2 /* Assets.xcassets */; };
 		ECF50E632AFC475C00779EA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECF50E612AFC475C00779EA2 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC6030CB2AFC76330021739A /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		ECF50E532AFC475A00779EA2 /* TipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECF50E562AFC475A00779EA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECF50E582AFC475A00779EA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		ECF50E5A2AFC475A00779EA2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ECF50E5A2AFC475A00779EA2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		ECF50E5D2AFC475A00779EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECF50E5F2AFC475C00779EA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECF50E622AFC475C00779EA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC6030CD2AFC763D0021739A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		ECF50E4A2AFC475A00779EA2 = {
 			isa = PBXGroup;
 			children = (
@@ -58,7 +67,9 @@
 			children = (
 				ECF50E562AFC475A00779EA2 /* AppDelegate.swift */,
 				ECF50E582AFC475A00779EA2 /* SceneDelegate.swift */,
-				ECF50E5A2AFC475A00779EA2 /* ViewController.swift */,
+				EC6030CB2AFC76330021739A /* ResultsViewController.swift */,
+				ECF50E5A2AFC475A00779EA2 /* CalculatorViewController.swift */,
+				EC6030CD2AFC763D0021739A /* Controllers */,
 				ECF50E5C2AFC475A00779EA2 /* Main.storyboard */,
 				ECF50E5F2AFC475C00779EA2 /* Assets.xcassets */,
 				ECF50E612AFC475C00779EA2 /* LaunchScreen.storyboard */,
@@ -138,9 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ECF50E5B2AFC475A00779EA2 /* ViewController.swift in Sources */,
+				ECF50E5B2AFC475A00779EA2 /* CalculatorViewController.swift in Sources */,
 				ECF50E572AFC475A00779EA2 /* AppDelegate.swift in Sources */,
 				ECF50E592AFC475A00779EA2 /* SceneDelegate.swift in Sources */,
+				EC6030CC2AFC76330021739A /* ResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
